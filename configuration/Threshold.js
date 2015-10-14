@@ -3,10 +3,13 @@
 // Leave the above lines for propper jshinting
 var jsonfile = require('jsonfile');
 var sensors = require('../galileo/SensorInstances');
-var CONFIG_FILE = './configuration/data/threshold.json';
+var CONFIG_FILE = './configuration/data/threshold/threshold.json';
 
 function Threshold(pinNumber) {
-    CONFIG_FILE = './configuration/data/threshold' + pinNumber + '.json';
+//    if(!pinNumber){
+//        pinNumber = '';
+//    }
+    CONFIG_FILE = './configuration/data/threshold/threshold' + pinNumber + '.json';
     this.data = jsonfile.readFileSync(CONFIG_FILE, {throws: true});
 }
 
@@ -32,14 +35,12 @@ Threshold.prototype.checkThreshold = function() {
     var water = false;
     var moistures = sensors.soils;
     for(var key in moistures){
-        console.log(key + ":" + moistures[key].getValue());
         if(moistures[key].getValue() < this.data.moisture[key]){
             water = true;
             break;
         }
     }
-    console.log();
     return water;
 };
 
-module.exports = new Threshold();
+module.exports = Threshold;

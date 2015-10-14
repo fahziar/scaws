@@ -3,8 +3,8 @@
 // Leave the above lines for propper jshinting
 
 var mraa = require('mraa');
-var threshold = require('./configuration/Threshold');
-var schedule = require('./configuration/Schedule');
+var threshold = require('../configuration/Threshold');
+var schedule = require('../configuration/Schedule');
 
 function Valve(pinNumber, alias, blinker, openState) {
     this.pinNumber = pinNumber;
@@ -12,7 +12,6 @@ function Valve(pinNumber, alias, blinker, openState) {
     this.pin.dir(mraa.DIR_OUT);
     this.alias = alias;
     this.blinker = blinker;
-    console.log(pinNumber);
     this.threshold = new threshold(pinNumber); 
     this.schedule = new schedule(pinNumber);
     
@@ -27,10 +26,10 @@ function Valve(pinNumber, alias, blinker, openState) {
     this.pin.write(this.CLOSED);
 }
 
-Valve.prototype.check = function(){
-    if(this.threshold.checkThreshold()){
+Valve.prototype.check = function(time){
+    if(this.threshold.checkThreshold() && this.schedule.checkSchedule(time)){
         this.pin.write(this.OPEN);
-    };
+    }
     else{
         this.pin.write(this.CLOSED); 
     }

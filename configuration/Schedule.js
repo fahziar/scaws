@@ -2,11 +2,11 @@
 /*jshint unused:true */
 // Leave the above lines for propper jshinting
 var jsonfile = require('jsonfile');
-var CONFIG_FILE = './configuration/data/schedule.json';
+var CONFIG_FILE = './configuration/data/schedule/schedule.json';
 
 function Schedule(pinNumber) {
     this.times = [];
-    CONFIG_FILE = './configuration/data/schedule' + pinNumber + '.json';
+    CONFIG_FILE = './configuration/data/schedule/schedule' + pinNumber + '.json';
     this.times = jsonfile.readFileSync(CONFIG_FILE, {throws: false});
 }
 
@@ -39,12 +39,12 @@ Schedule.prototype.removeSchedule = function(index) {
 };
 
 Schedule.prototype.checkSchedule = function(time) {
-    if(this.times.indexOf(time > 0)){
-        return true;   
+    if(this.times.indexOf(time) > -1){
+        return true;
     }
     else{
         return false;   
     }
 };
 
-module.exports = new Schedule();
+module.exports = Schedule;
