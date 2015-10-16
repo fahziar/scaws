@@ -5,13 +5,16 @@
 var mraa = require('mraa');
 var threshold = require('../configuration/Threshold');
 var schedule = require('../configuration/Schedule');
+var configManager = require('../configuration/ConfigManager').config.rules;
+var learning = require('../configuration/Learning');
 
-function Valve(pinNumber, alias, blinker, openState) {
+function Valve(pinNumber, enabled, alias, blinker, openState) {
     this.pinNumber = pinNumber;
     this.pin = new mraa.Gpio(pinNumber);
     this.pin.dir(mraa.DIR_OUT);
     this.alias = alias;
     this.blinker = blinker;
+    this.enabled = enabled;
     this.threshold = new threshold(pinNumber); 
     this.schedule = new schedule(pinNumber);
     
@@ -27,11 +30,26 @@ function Valve(pinNumber, alias, blinker, openState) {
 }
 
 Valve.prototype.check = function(time){
-    if(this.threshold.checkThreshold() && this.schedule.checkSchedule(time)){
-        this.pin.write(this.OPEN);
+    if(configManager == 'learning'){
+        console.log(this.pinNumber + ": " + learning.classify(this.pin.read() === this.OPEN, this.pinNumber));
+       if(learning.classify(this.pin.read() === this.OPEN, this.pinNumber) > 0.5){
+            this.pin.write(this.OPEN);
+            return 1;
+        }
+        else{
+            this.pin.write(this.CLOSED);
+            return 0;
+        }
     }
-    else{
-        this.pin.write(this.CLOSED); 
+    else if(configManager == 'threshold' || configManager == 'schedule'){
+        if(this.threshold.checkThreshold() && this.schedule.checkSchedule(time)){
+            this.open()
+            return 1;
+        }
+        else{
+            this.close();
+            return 0;
+        }
     }
 }
 

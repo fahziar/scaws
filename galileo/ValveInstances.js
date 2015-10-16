@@ -3,12 +3,14 @@
 // Leave the above lines for propper jshinting
 
 var Valve = require('./Valve');
+var Config = require('../configuration/ConfigManager').config;
+
 
 var instances = {
-	valve1 : new Valve(2),
-	valve2 : new Valve(3),
-	valve3 : new Valve(4),
-	valve4 : new Valve(5),
+	valve1 : new Valve(2, 'valve1' in Config.valves),
+	valve2 : new Valve(3, 'valve2' in Config.valves),
+	valve3 : new Valve(4, 'valve3' in Config.valves),
+	valve4 : new Valve(5, 'valve4' in Config.valves)
 }
 
 module.exports = instances;

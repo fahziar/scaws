@@ -24,18 +24,18 @@ Schedule.prototype.addSchedule = function(time) {
         if (index == -1) {
             this.times.push(time);
         }
-        jsonfile.writeFileSync(CONFIG_FILE, this.times, {spaces: 3});
+        this.writeFile();
     }
 };
 
 Schedule.prototype.editSchedule = function(index, time) {
     this.times[index] = time;
-    jsonfile.writeFileSync(CONFIG_FILE, this.times, {spaces: 3});
+    this.writeFile();
 };
 
 Schedule.prototype.removeSchedule = function(index) {
     this.times.splice(index, 1);
-    jsonfile.writeFileSync(CONFIG_FILE, this.times, {spaces: 3});
+    this.writeFile();
 };
 
 Schedule.prototype.checkSchedule = function(time) {

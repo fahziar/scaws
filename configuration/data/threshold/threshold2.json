@@ -1,10 +1,10 @@
 {
     "moisture":{  
-        "soil1" : 0,
+        "soil1" : 700,
         "soil2" : 700,
-        "soil3" : 0,
-        "soil4" : 0,
-        "soil5" : 0
+        "soil3" : 700,
+        "soil4" : 700,
+        "soil5" : 700
     },
-    "light": 100
+    "light": 2000
 }

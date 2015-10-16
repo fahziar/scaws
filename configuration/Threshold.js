@@ -40,7 +40,13 @@ Threshold.prototype.checkThreshold = function() {
             break;
         }
     }
-    return water;
+    if(sensors.light.getValue() < this.data.light){
+        return water;    
+    }
+    else{
+        return false;
+    }
+    
 };
 
 module.exports = Threshold;

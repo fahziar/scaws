@@ -4,14 +4,19 @@
 
 var mraa = require("mraa");
 
-function Sensor(pinNumber, alias) {
+function Sensor(pinNumber, enabled, alias) {
     this.pinNumber = pinNumber;
+    this.enabled = enabled;
     this.alias = alias;
     this.pin = new mraa.Aio(pinNumber);
 }
 
 Sensor.prototype.getValue = function() {
-    return this.pin.read();   
+	if (this.enabled){
+    	return this.pin.read();   
+	} else {
+		return 1023;
+	}
 };
 
 module.exports = Sensor;

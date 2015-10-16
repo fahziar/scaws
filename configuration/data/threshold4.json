@@ -1,0 +1,10 @@
+{
+    "moisture":{  
+        "soil1" : 0.7,
+        "soil2" : 0.7,
+        "soil3" : 0.7,
+        "soil4" : 0.7,
+        "soil5" : 0.7
+    },
+    "light": 10
+}

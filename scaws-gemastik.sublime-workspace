@@ -1,0 +1,326 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"CXX",
+				"CXX_FLAGS"
+			],
+			[
+				"con",
+				"content_length"
+			],
+			[
+				"evht",
+				"evhttp"
+			],
+			[
+				"evhtt",
+				"evhttp_request"
+			],
+			[
+				"c",
+				"c_str"
+			],
+			[
+				"char",
+				"char_uri"
+			],
+			[
+				"input",
+				"input_len"
+			],
+			[
+				"acc",
+				"accept_error_cb"
+			],
+			[
+				"acce",
+				"accept_conn_cb"
+			],
+			[
+				"evcon",
+				"eventconnlistener"
+			],
+			[
+				"ar",
+				"argv"
+			],
+			[
+				"main",
+				"mainLoop"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"selected_items":
+		[
+			[
+				"htm",
+				"HTMLPrettify"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"prei",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package contri",
+				"Package Control: Install Package"
+			],
+			[
+				"pret",
+				"HTMLPrettify"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"jsh",
+				"JSHint"
+			],
+			[
+				"jshi",
+				"JSHint"
+			],
+			[
+				"js",
+				"JSHint"
+			],
+			[
+				"package control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/H.cpp",
+		"/D/service.txt",
+		"/D/rabbitmq/irc-rabbitmq/rabbit-irc.js",
+		"/C/Users/fahziar/Documents/Intel Galileo/if-race/ValvesController.js",
+		"/C/Users/fahziar/Documents/Intel Galileo/scaws-gemastik/gaileo/Sensor.js",
+		"/C/Users/fahziar/Documents/Intel Galileo/scaws-gemastik/gaileo/SensorInstances.js",
+		"/C/Users/fahziar/Documents/Intel Galileo/scaws-gemastik/galileo/Valve.js",
+		"/C/Users/fahziar/Documents/Intel Galileo/scaws-gemastik/galileo/ValveInstances.js",
+		"/D/rabbitmq/Vagrantfile",
+		"/D/I.cpp",
+		"/C/Users/fahziar/OneDrive/Kuliah/Tugas Akhir/Log Bimbingan",
+		"/C/Users/fahziar/Documents/Intel Galileo/if-race/galileo/MoistureSensor.js",
+		"/D/pat_grpc/grpc/examples/node/helloworld.proto",
+		"/D/timer.py",
+		"/D/linux_grpc/Vagrantfile",
+		"/D/linux_grpc/hello-grpc/client.js",
+		"/C/Users/fahziar/Documents/iris.arff",
+		"/C/Users/fahziar/IdeaProjects/weka-src/iris.unseen.arff",
+		"/C/Users/fahziar/IdeaProjects/weka-src/weather.nominal.unseen.arff",
+		"/C/Users/fahziar/IdeaProjects/weka-src/weather.numeric.unseen.arff",
+		"/D/scala/helloworld.scala",
+		"/C/Users/fahziar/Downloads/CJ15.c",
+		"/C/Users/fahziar/IdeaProjects/irc-thrift/src/SimpleIrcClient/SimpleIrcClient.java",
+		"/D/rabbitmq/B.cpp",
+		"/D/rabbitmq/A.cpp",
+		"/D/rabbitmq/dump.asm",
+		"/D/linux_grpc/hello-grpc/server.js",
+		"/C/Users/fahziar/IdeaProjects/node-chat-client/index.js",
+		"/D/how to build.txt",
+		"/C/Users/fahziar/AppData/Local/Temp/7zOD9B5.tmp/control",
+		"/C/Users/fahziar/AppData/Local/Temp/7zOAFE5.tmp/control",
+		"/D/linux-dev/event.cpp",
+		"/D/httpd/top-report.txt",
+		"/D/linux-dev/libevent/evhttp.cpp",
+		"/D/linux-dev/libevent/main.cpp",
+		"/D/linux-dev/libevent/README.MD",
+		"/D/thrift/time.thrift",
+		"/C/Users/fahziar/Documents/ML.csv",
+		"/C/Users/fahziar/Documents/Intel Galileo/if-race/configuration/data/learningModel.json",
+		"/D/linux-dev/patconfig/config.h",
+		"/D/linux-dev/patconfig/main.cpp",
+		"/D/linux-dev/libevent/README",
+		"/D/linux-dev/patconfig/htdocs/500b.html",
+		"/D/nginx/500b.html",
+		"/D/nginx/top-report.txt",
+		"/D/nginx/1 kb.txt",
+		"/D/linux-dev/evhttp.cpp",
+		"/D/linux-dev/htdocs/index.html",
+		"/D/linux-dev/ex_echo.cpp",
+		"/C/Users/fahziar/AppData/Local/Temp/57.html",
+		"/C/Users/fahziar/AppData/Roaming/Sublime Text 2/Packages/MarkdownEditing/Bold and Italic Markers.tmPreferences",
+		"/D/linux-dev/libevent/Makefile",
+		"/D/linux-dev/patconfig/config.cpp",
+		"/D/httpd/500b.html",
+		"/D/linux-dev/patconfig/htdocs/20kb.html",
+		"/D/linux-dev/patconfig/memusg.sh",
+		"/D/linux-dev/libevent.cpp",
+		"/D/linux-dev/Vagrantfile",
+		"/D/linux-dev/server.cpp",
+		"/D/linux-dev/event.c",
+		"/C/Users/fahziar/AndroidStudioProjects/pegipegi-android/app/src/main/java/com/pegipegi/android/hotels/payment/fragment/HotelPaymentReviewFragment.java",
+		"/D/node-oop/app.js",
+		"/D/coba_node/app.js",
+		"/C/Users/fahziar/Documents/Intel Galileo/jsonfile/main.js",
+		"/C/Users/fahziar/Documents/Intel Galileo/jsonfile/ConfigManager.js",
+		"/C/Users/fahziar/Documents/Intel Galileo/jsonfile/data/config.json",
+		"/C/Users/fahziar/Downloads/spark-1.4.1/pom.xml",
+		"/F/EFI/CLOVER/config.plist",
+		"/D/CLOVER/config.plist",
+		"/D/backup.plist"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".main",
+			"config.vm.network",
+			"numcpu",
+			";",
+			",",
+			";",
+			"apache2",
+			"script",
+			"thres",
+			"l",
+			"bev",
+			"sin",
+			"btnPape"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			",",
+			".",
+			","
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
