@@ -46,8 +46,8 @@ Learning.prototype.classify = function(watering, pinNumber) {
     var soil1 = sensorInstances.soils['soil1'].getValue()/1023;
     var soil2 = sensorInstances.soils['soil2'].getValue()/1023;
     var soil3 = sensorInstances.soils['soil3'].getValue()/1023;
-    var soil4 = (soil1 + soil2 + soil3)/3;
-    var soil5 = (soil1 + soil2 + soil3)/3;
+    var soil4 = sensorInstances.soils['soil4'].getValue()/1023;
+    var soil5 = sensorInstances.soils['soil5'].getValue()/1023;
     var test = [soil1, soil1, soil1, soil1, soil1, 0];
     if(watering) {
         output = this.stopModel.run(test);
