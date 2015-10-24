@@ -5,7 +5,10 @@ var CONFIG_FILE = './configuration/data/config.json';
 var defaultConfig = {
     rules : 'learning',
     valves: {},
-    sensors: {}
+    sensors: {},
+    endpoint: 'https://sws.firebaseio.com', //do not put slash behind uri
+    nodeId : 'galileo2',
+    namaTaman : 'pramuka'
 };
 
 var ConfigManager = function() {

@@ -4,10 +4,14 @@
 */
 
 var sensors = require('./SensorInstances');
+var valves = require('./ValveInstances');
+var FbUriFactory = require('../configuration/FirebaseUriFactory');
 var Firebase = require('firebase');
 
+var UPDATE_INTERVAL = 200;
+
 function pushSensorValues(){
-    var fburl = 'https://sws.firebaseio.com/gardens/pramuka/galileos/galileo2/sensors';
+    var fburl = FbUriFactory.getSensorsUri();
     
     //update soil sensor value
     var soils = fburl + '/soils';
@@ -26,4 +30,19 @@ function pushSensorValues(){
     });
 }
 
+function pushValveValues(){
+    var fburl = FbUriFactory.getValvesUri();
+
+    //update soil sensor value
+    for(var key in  valves){
+        var url = fburl + '/' + key;
+        var valveFb = new Firebase(url);
+        valveFb.update({
+            opened : valves[key].status() == true
+        });
+    };
+
+}
+
 module.exports.pushSensorValues = pushSensorValues;
+module.exports.pushValveValues = pushValveValues;

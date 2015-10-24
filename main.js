@@ -17,6 +17,8 @@ var isWatering = [0, 0, 0, 0];
 var modelCreated = false;
 
 firebase.pushSensorValues();
+valves['valve1'].open();
+firebase.pushValveValues();
 //var date = new Date();
 //console.log(date);
 //times(10, 20, 23, 1, 2, 2000);

@@ -1,0 +1,8 @@
+{
+   "rules": "learning",
+   "valves": {},
+   "sensors": {},
+   "endpoint": "https://sws.firebaseio.com",
+   "nodeId" : "galileo2",
+   "namaTaman" : "pramuka"
+}
