@@ -2,6 +2,7 @@
 /*jshint unused:false */
 // Leave the above lines for propper jshinting
 
+var ConfigManager = require('../configuration/ConfigManager');
 var mraa = require("mraa");
 
 function Sensor(pinNumber, enabled, alias) {
@@ -18,5 +19,9 @@ Sensor.prototype.getValue = function() {
 		return 1023;
 	}
 };
+
+Sensor.prototype.updateConfig = function () {
+    ConfigManager.config.sensors[this.alias] = this.enabled;
+}
 
 module.exports = Sensor;

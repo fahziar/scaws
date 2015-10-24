@@ -8,7 +8,7 @@ var defaultConfig = {
     sensors: {},
     endpoint: 'https://sws.firebaseio.com', //do not put slash behind uri
     nodeId : 'galileo2',
-    namaTaman : 'pramuka'
+    idTaman : '1'
 };
 
 var ConfigManager = function() {
@@ -33,6 +33,5 @@ ConfigManager.prototype.saveConfig = function() {
     jsonfile.writeFileSync(CONFIG_FILE, this.config, {spaces: 3});
 };
 
-console.log(__filename);
 
 module.exports = new ConfigManager();

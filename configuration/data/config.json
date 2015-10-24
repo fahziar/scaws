@@ -2,7 +2,7 @@
    "rules": "learning",
    "valves": {},
    "sensors": {},
-   "endpoint": "https://sws.firebaseio.com",
-   "nodeId" : "galileo2",
-   "namaTaman" : "pramuka"
+   "endpoint": "https://menori.firebaseio.com",
+   "nodeId" : "galileo1",
+   "idTaman" : "1"
 }

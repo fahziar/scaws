@@ -15,10 +15,9 @@ var timetemp = (new Date()).getTime();
 var getDataDuration = 30 * 60 * 1000;
 var isWatering = [0, 0, 0, 0];
 var modelCreated = false;
+var Firebase = require('firebase');
+var FbUriFactory = require('./configuration/FirebaseUriFactory');
 
-firebase.pushSensorValues();
-valves['valve1'].open();
-firebase.pushValveValues();
 //var date = new Date();
 //console.log(date);
 //times(10, 20, 23, 1, 2, 2000);
@@ -104,3 +103,16 @@ firebase.pushValveValues();
 //}
 //
 //periodicActivity();
+firebase.connectionManager();
+firebase.modeListener();
+firebase.initForceOpenListener();
+firebase.initSensorEnabledListener();
+firebase.initThresholdListener();
+function periodicActivity(){
+    new Firebase(FbUriFactory.getEndponint() + '/.info/connected').once('value', function(data){console.log('status: ' + data.val());});
+    firebase.pushSensorValues();
+    firebase.pushValveValues();
+    setTimeout(periodicActivity, 500);
+}
+
+periodicActivity();

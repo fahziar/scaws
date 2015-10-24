@@ -5,7 +5,7 @@
 var mraa = require('mraa');
 var threshold = require('../configuration/Threshold');
 var schedule = require('../configuration/Schedule');
-var configManager = require('../configuration/ConfigManager').config.rules;
+var configManager = require('../configuration/ConfigManager');
 var learning = require('../configuration/Learning');
 
 function Valve(pinNumber, enabled, alias, blinker, openState) {
@@ -30,7 +30,7 @@ function Valve(pinNumber, enabled, alias, blinker, openState) {
 }
 
 Valve.prototype.check = function(time){
-    if(configManager == 'learning'){
+    if(configManager.config.rules == 'learning'){
         console.log(this.pinNumber + ": " + learning.classify(this.pin.read() === this.OPEN, this.pinNumber));
        if(learning.classify(this.pin.read() === this.OPEN, this.pinNumber) > 0.5){
             this.pin.write(this.OPEN);
@@ -41,7 +41,7 @@ Valve.prototype.check = function(time){
             return 0;
         }
     }
-    else if(configManager == 'threshold' || configManager == 'schedule'){
+    else if(configManager.config.rules == 'threshold' || configManager.config.rules == 'schedule'){
         if(this.threshold.checkThreshold() && this.schedule.checkSchedule(time)){
             this.open()
             return 1;
