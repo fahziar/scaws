@@ -173,6 +173,21 @@ function initThresholdListener(){
     }
 }
 
+function scheduleListener(valve){
+    var scheduleRef = new Firebase(FbUriFactory.getValvesUri() + '/' + valve + '/schedule');
+    scheduleRef.on('value', function (val){
+        if (typeof val.val() === 'string') {
+            ValveInstances[valve].schedule.parse(val.val());
+        }
+    });
+}
+
+function initScheduleListener(){
+    for (var key in ValveInstances){
+        scheduleListener(key);
+    }
+}
+
 module.exports.pushSensorValues = pushSensorValues;
 module.exports.pushValveValues = pushValveValues;
 module.exports.connectionManager = connectionManager;
@@ -180,3 +195,4 @@ module.exports.modeListener = modeListener;
 module.exports.initForceOpenListener = initForceOpenListener;
 module.exports.initSensorEnabledListener = initSensorEnabledListener;
 module.exports.initThresholdListener = initThresholdListener;
+module.exports.initScheduleListener = initScheduleListener;

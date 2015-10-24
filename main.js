@@ -108,6 +108,7 @@ firebase.modeListener();
 firebase.initForceOpenListener();
 firebase.initSensorEnabledListener();
 firebase.initThresholdListener();
+firebase.initScheduleListener();
 function periodicActivity(){
     new Firebase(FbUriFactory.getEndponint() + '/.info/connected').once('value', function(data){console.log('status: ' + data.val());});
     firebase.pushSensorValues();

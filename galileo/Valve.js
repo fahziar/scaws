@@ -16,7 +16,7 @@ function Valve(pinNumber, enabled, alias, blinker, openState) {
     this.blinker = blinker;
     this.enabled = enabled;
     this.threshold = new threshold(pinNumber); 
-    this.schedule = new schedule(pinNumber);
+    this.schedule = new schedule(pinNumber, this.alias);
     
     if (openState === 0){
         this.OPEN = 0;

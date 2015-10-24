@@ -4,18 +4,20 @@
 var jsonfile = require('jsonfile');
 var CONFIG_FILE = './configuration/data/schedule/schedule.json';
 
-function Schedule(pinNumber) {
+function Schedule(pinNumber, alias) {
     this.times = [];
-    CONFIG_FILE = './configuration/data/schedule/schedule' + pinNumber + '.json';
-    this.times = jsonfile.readFileSync(CONFIG_FILE, {throws: false});
+    this.configPath = './configuration/data/schedule/schedule' + pinNumber + '.json';
+    this.times = jsonfile.readFileSync(this.configPath, {throws: false});
+    this.pinNumber = pinNumber;
+    this.alias = alias;
 }
 
 Schedule.prototype.readFile = function() {
-    this.times = jsonfile.readFileSync(CONFIG_FILE, {throws: false});
+    this.times = jsonfile.readFileSync(this.configPath, {throws: false});
 };
 
 Schedule.prototype.writeFile = function() {
-    jsonfile.writeFileSync(CONFIG_FILE, this.times, {spaces: 3});
+    jsonfile.writeFileSync(this.configPath, this.times, {spaces: 3});
 };
 
 Schedule.prototype.addSchedule = function(time) {
@@ -45,6 +47,17 @@ Schedule.prototype.checkSchedule = function(time) {
     else{
         return false;   
     }
+};
+
+Schedule.prototype.parse = function (input) {
+    var schedules = input.split(', ');
+    this.times = [];
+    for(var i in schedules){
+        this.times.push(parseInt(schedules[i]));
+    }
+
+    this.writeFile();
+    console.log('valve' + this.alias + ':' + this.times);
 };
 
 module.exports = Schedule;
